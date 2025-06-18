@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Vision Demo</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        h1 {
+            color: #00ff9d;
+            margin-bottom: 20px;
+        }
+        .video-container {
+            margin: 20px auto;
+            max-width: 800px;
+            border: 2px solid #00ff9d;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .video-feed {
+            width: 100%;
+            height: auto;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        .btn {
+            background: #00ff9d;
+            color: #0a0a0a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0 10px;
+        }
+        .btn:hover {
+            background: #00cc7d;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 4px;
+            background: rgba(0, 255, 157, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Computer Vision Demo</h1>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" class="video-feed" alt="Video Feed">
+        </div>
+        <div class="controls">
+            <button class="btn" onclick="startDetection()">Start Detection</button>
+            <button class="btn" onclick="stopDetection()">Stop Detection</button>
+        </div>
+        <div class="status">
+            <p>Status: Ready</p>
+        </div>
+    </div>
+
+    <script>
+        function startDetection() {
+            fetch('/start_detection')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('.status p').textContent = 'Status: Detection Active';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.querySelector('.status p').textContent = 'Status: Error starting detection';
+                });
+        }
+
+        function stopDetection() {
+            fetch('/stop_detection')
+                .then(response => response.json())
+                .then(data => {
+                    document.querySelector('.status p').textContent = 'Status: Detection Stopped';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.querySelector('.status p').textContent = 'Status: Error stopping detection';
+                });
+        }
+    </script>
+</body>
+</html> 
