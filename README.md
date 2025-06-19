@@ -1,85 +1,108 @@
-# Modern Portfolio Website
+# Aftaab Jariwala - Machine Learning Engineer Portfolio
 
-A clean, responsive portfolio website built with HTML, CSS, and JavaScript. This template is designed to showcase your projects and skills in a modern, professional way.
+A comprehensive portfolio showcasing ML/AI projects, including interactive demos and a professional website.
 
-## Features
+## 🚀 Quick Deploy
 
-- Responsive design that works on all devices
-- Smooth scrolling navigation
-- Animated project cards
-- Contact form
-- Social media links
-- Modern UI with clean typography
-- Optimized performance
+### Option 1: Automated Setup
 
-## Getting Started
-
-1. Clone this repository or download the files
-2. Open `index.html` in your browser to view the website
-3. Customize the content in `index.html` with your information
-4. Modify the styles in `styles.css` to match your preferences
-5. Update the JavaScript functionality in `script.js` if needed
-
-## Customization
-
-### Personal Information
-
-Edit the following sections in `index.html`:
-
-- Your name and title in the hero section
-- About me section
-- Skills list
-- Project cards
-- Contact information
-- Social media links
-
-### Styling
-
-The website uses CSS variables for easy customization. Edit the following in `styles.css`:
-
-```css
-:root {
-  --primary-color: #2563eb;
-  --secondary-color: #1e40af;
-  --text-color: #1f2937;
-  --light-text: #6b7280;
-  --background: #ffffff;
-  --section-bg: #f3f4f6;
-}
+```bash
+python deploy.py
 ```
 
-### Projects
+### Option 2: Manual Setup
 
-Add your projects by duplicating the project card structure in `index.html`:
-
-```html
-<div class="project-card">
-  <div class="project-image">
-    <img src="path-to-your-image" alt="Project Name" />
-  </div>
-  <div class="project-info">
-    <h3>Project Name</h3>
-    <p>Project description</p>
-    <div class="project-links">
-      <a href="#" class="btn small">View Demo</a>
-      <a href="#" class="btn small">Source Code</a>
-    </div>
-  </div>
-</div>
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+git push -u origin main
 ```
 
-## Deployment
+## 📁 Project Structure
 
-To deploy your portfolio website:
+```
+Portfolio Black/
+├── app.py                 # Main Streamlit AI app
+├── index.html            # Static portfolio website
+├── styles.css            # Portfolio styling
+├── script.js             # Portfolio interactions
+├── demos/
+│   ├── computer_vision/  # CV demo with Flask
+│   └── nlp/             # NLP demo with Flask
+└── requirements.txt      # Python dependencies
+```
 
-1. Choose a hosting service (GitHub Pages, Netlify, Vercel, etc.)
-2. Upload your files to the hosting service
-3. Configure your domain name if needed
+## 🌐 Deployment Options
 
-## Contributing
+### 1. Streamlit Cloud (Main App)
 
-Feel free to fork this project and customize it for your needs. If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
+- **Best for**: AI Product Copy Generator
+- **URL**: `https://YOUR_APP_NAME-YOUR_USERNAME.streamlit.app`
+- **Setup**: [share.streamlit.io](https://share.streamlit.io)
 
-## License
+### 2. GitHub Pages (Portfolio Website)
 
-This project is open source and available under the [MIT License](LICENSE).
+- **Best for**: Static portfolio website
+- **URL**: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME`
+- **Setup**: Repository Settings → Pages
+
+### 3. Render (Demo Projects)
+
+- **Best for**: Computer Vision and NLP demos
+- **Setup**: [render.com](https://render.com)
+
+## 🛠️ Local Development
+
+### Main App
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Computer Vision Demo
+
+```bash
+cd demos/computer_vision
+pip install -r requirements.txt
+python app.py
+```
+
+### NLP Demo
+
+```bash
+cd demos/nlp
+pip install -r requirements.txt
+python app.py
+```
+
+## 📋 Features
+
+- **AI Product Copy Generator**: Streamlit app using GPT-2
+- **Interactive Portfolio**: Modern, responsive design
+- **Computer Vision Demo**: Real-time object detection
+- **NLP Demo**: Text analysis and sentiment detection
+- **Professional Design**: Clean, modern UI/UX
+
+## 🔧 Technologies Used
+
+- **Python**: Streamlit, Flask, TensorFlow, OpenCV
+- **Frontend**: HTML5, CSS3, JavaScript
+- **ML/AI**: Transformers, BERT, Computer Vision
+- **Deployment**: Streamlit Cloud, GitHub Pages, Render
+
+## 📖 Detailed Deployment Guide
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for comprehensive deployment instructions.
+
+## 🤝 Contact
+
+- **GitHub**: [aftaabjariwala](https://github.com/aftaabjariwala)
+- **LinkedIn**: [aftaab-jariwala](https://www.linkedin.com/in/aftaab-jariwala/)
+- **Email**: aftaab.j@themailpad.com
+
+---
+
+**Designed & Built by Aftaab Jariwala**
